@@ -1,0 +1,14 @@
+.AddTransaction-container {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.AddTransaction-h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
