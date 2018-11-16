@@ -4,11 +4,21 @@
     display: flex;
     text-align: center;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    border-radius: 20px;
+
 }
 .AddTransaction-h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     margin-bottom: 10px;
+    font-size: 28px;
+}
+.AddTransaction-flex-wrapper {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

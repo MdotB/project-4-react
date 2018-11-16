@@ -7,19 +7,26 @@ export default class AddTransaction extends Component {
     category: ''
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
   handleChangeAmount = (e) => {
-    this.setState({
-      amount: e.target.value
-    });
+    console.log(e.target.value)
+    this.setState(
+      {[e.target.id]: parseInt(e.target.value, 10)}
+      );
   }
 
   handleChangeCat = (e) => {
     this.setState({
-      category: e.target.value
+      [e.target.id]: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state)
+    this.props.addTransaction(this.state);
+    this.setState({
+      amount: 0,
+      category: ''
     })
   }
 
@@ -27,18 +34,19 @@ export default class AddTransaction extends Component {
     return (
       <div className='AddTransaction-container'>
         <h2 className='AddTransaction-h2'>Add Transaction</h2>
-        <div>
-        <form method='POST'>
-          <div className="input-group mb-3">
-            <input type="text" placeholder='enter amount' className="form-control" onChange={this.handleChangeAmount} aria-label="Amount (to the nearest dollar)"/>
+        <div className='AddTransaction-flex-wrapper'>
+        <form  onSubmit={this.handleSubmit}>
+          <div className="">
+            <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} />
           </div>
-          <div class="input-group mb-3">
-            <select value="" onChange={this.handleChangeCat} className="custom-select" id="inputGroupSelect01">
-              <option value="">select...</option>
+          <div className="input-group mb-3">
+            <select id='category' selected="select..." onChange={this.handleChangeCat} className="custom-select" value={this.state.category}>
+              <option value="">categorize...</option>
               <option value="Automobile">Automobile</option>
               <option value="Child Care">Child Care</option>
               <option value="Food">Food</option>
               <option value="Healthcare">Healthcare</option>
+              <option value="Income">Income</option>
               <option value="Internet">Internet</option>
               <option value="Misc.">Misc.</option>
               <option value="Mortgage/Rent">Mortgage/Rent</option>
@@ -50,7 +58,7 @@ export default class AddTransaction extends Component {
               <option value="Utilities">Utilities</option>
             </select>
           </div>
-          <button type="submit" onSubmit={this.handleSubmit} className="btn btn-outline-primary">Add</button>
+          <button type="submit" className="btn btn-outline-primary">Add</button>
         </form>
         </div>
       </div>

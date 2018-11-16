@@ -1,29 +1,10 @@
 
 .App {
+  font-family: 'Montserrat', sans-serif;
   min-height: 100vh;
   background-color: rgb(211, 211, 211);
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: 150px auto;
-  grid-template-rows: 70px auto 70px;
-  grid-template-areas:
-    'm h h'
-    'm d d'
-    'f f f'
-    ;
 }
-.Header-wrapper {
-  grid-area: h;
-}
-.Menu-wrapper {
-  grid-area: m;
-}
-.Dashboard-container {
-  grid-area: d;
-}
-.Footer-container {
-  grid-area: f;
-}
+
 
 
 

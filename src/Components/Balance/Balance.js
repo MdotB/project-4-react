@@ -1,15 +1,16 @@
 import React from 'react';
 import './Balance.css';
 
-const Balance = (props) => {
+const Balance = ({total}) => {
+  console.log(total)
     let style = {
-        color: props.total > 0 ? 'green' : 'red'
+        color: total > 0 ? 'green' : 'red'
     };
 
     return (
       <div className='Balance-container'>
         <h2 className='Balance-h2'>Balance</h2>
-        <p style={style}>${ props.total.toFixed(2) }</p>
+        <p style={style}>${ total }</p>
       </div>
     )
 }

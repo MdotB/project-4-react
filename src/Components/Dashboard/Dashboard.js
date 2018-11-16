@@ -1,31 +1,62 @@
-import React, { Component } from 'react'
-import Widget from '../Widget/Widget';
+import React, { Component } from 'react';
 import './Dashboard.css';
-import Actuals from '../Actuals/Actuals';
-
-let dataSet = [
-  {amount: -2000, category: 'Mortgage/Rent'},
-  {amount: -100, category: 'Phone'},
-  {amount: -400, category: 'Automobile'},
-  {amount: -15, category: 'Food'},
-  {amount: 5000, category: 'Income'}
-]
+import AddTransaction from '../AddTransaction/AddTransaction';
+import TransactionList from '../TransactionList/TransactionList';
+import Balance from '../Balance/Balance';
+import Chart from '../Chart/Chart';
 
 class Dashboard extends Component {
-  constructor() {
-  super();
-  this.state = dataSet;
-  this.state.total = 0;
+  state = {
+    transactions: [],
+    total: 0
   }
 
+  componentWillMount() {
+    this.setState({
+      transactions: this.state.transactions,
+      total: this.state.transactions.reduce( (a, b) => {
+        return a + b.amount;
+      }, 0)
+    })
+  }
+  addTransaction = (transaction) => {
+    transaction.id = this.state.transactions.length + 1
+    console.log(transaction)
+    let transactions = [...this.state.transactions, transaction];
+    this.setState({
+      transactions: transactions,
+      total: transactions.reduce( (a, b) => {
+        console.log(b.category)
+        if (b.category === 'Income') {
+          return a + b.amount;
+        } else {
+          return a + b.amount * -1;
+        }
+      }, 0)
+    })
+  }
   render() {
     return (
       <div>
         <h2 className='Dashboard-h2'>Dashboard</h2>
         <div className='Dashboard-container'>
-          <Actuals className='Actuals-container' transactions={this.state} />
-          {/* <Widget className='Widget2-container' />
-          <Widget className='Widget3-container' /> */}
+          <AddTransaction 
+            className='AddTransaction-container' 
+            transactions={this.state.transactions}
+            addTransaction={this.addTransaction}
+          />
+          <TransactionList
+            className='TransactionList-container'
+            transactions={this.state.transactions}
+            total={this.state.total}
+            deleteTransaction={this.deleteTransaction}
+          />
+          <Balance
+            className='Balance-container'
+            total={this.state.total}
+            transactions={this.state.transactions}
+          />
+          <Chart chartData={this.state.transactions}/>
         </div>
       </div>
     )

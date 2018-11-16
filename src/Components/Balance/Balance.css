@@ -5,10 +5,12 @@
     align-items: center;
     justify-content: center;
     padding: 20px 0 20px 0;
+    font-size: 40px;
+    border-radius: 20px;
 }
 .Balance-h2 {
     font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
     font-weight: 600;
-    justify-self: flex-start;
     margin-bottom: 20px;
 }
