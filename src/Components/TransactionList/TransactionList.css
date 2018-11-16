@@ -18,6 +18,8 @@
 }
 .TransactionList-list {
     width: 100%;
+    max-height: 390px;
+    overflow-y: scroll;
 }
 .center {
     text-align: center;

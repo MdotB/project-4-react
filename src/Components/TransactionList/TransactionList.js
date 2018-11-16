@@ -5,7 +5,7 @@ let TransactionList = ({transactions}) => {
     const transactionList = transactions.length ? (
         transactions.map(transaction => {
             let style = {
-                color: transaction.category == 'Income' ? 'green' : 'red'
+                color: transaction.category === 'Income' ? 'green' : 'red'
             };
         
             return (

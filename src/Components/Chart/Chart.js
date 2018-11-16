@@ -11,7 +11,7 @@ export default class Chart extends Component {
         dataSets: [
           {
             label: 'Amount',
-            data: [500, 300, 200],
+            data: [],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',
               'rgba(54, 162, 235, 0.2)',
@@ -31,7 +31,7 @@ export default class Chart extends Component {
     return (
       <div className='Chart-container'>
       <Bar
-        data={this.state.chartData}
+        data={this.state.chartData[0]}
         options={{
           title: {
             display: true,

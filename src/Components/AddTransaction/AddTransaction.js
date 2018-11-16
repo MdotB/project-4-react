@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './AddTransaction.css';
+import Axios from "axios";
 
 export default class AddTransaction extends Component {
   state = {
@@ -8,7 +9,6 @@ export default class AddTransaction extends Component {
   }
 
   handleChangeAmount = (e) => {
-    console.log(e.target.value)
     this.setState(
       {[e.target.id]: parseInt(e.target.value, 10)}
       );
@@ -22,12 +22,15 @@ export default class AddTransaction extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state)
-    this.props.addTransaction(this.state);
-    this.setState({
+    Axios.post('http://localhost:4001/new',{
+      ...this.state
+    }).then(postedTransaction => {
+      console.log(postedTransaction)
+      this.props.getTransactions()
+    }, this.setState({
       amount: 0,
       category: ''
-    })
+    }))
   }
 
   render() {
@@ -35,7 +38,7 @@ export default class AddTransaction extends Component {
       <div className='AddTransaction-container'>
         <h2 className='AddTransaction-h2'>Add Transaction</h2>
         <div className='AddTransaction-flex-wrapper'>
-        <form  onSubmit={this.handleSubmit}>
+        <form method='POST' onSubmit={this.handleSubmit}>
           <div className="">
             <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} />
           </div>
