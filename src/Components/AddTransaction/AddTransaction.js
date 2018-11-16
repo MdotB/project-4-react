@@ -22,7 +22,8 @@ export default class AddTransaction extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post('http://localhost:4001/new',{
+    Axios.post('https://warm-wave-52595.herokuapp.com/new',{
+    // Axios.post('http://localhost:4001/new',{
       ...this.state
     }).then(postedTransaction => {
       console.log(postedTransaction)

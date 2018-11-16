@@ -16,7 +16,7 @@ class Dashboard extends Component {
   }
 
   getTransactions = () => {
-    fetch("http://localhost:4001")
+    fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
