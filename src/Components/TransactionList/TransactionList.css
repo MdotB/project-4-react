@@ -17,7 +17,7 @@
 }
 .TransactionList-list {
     width: 100%;
-    max-height: 380px;
+    max-height: 420px;
     overflow-y: scroll;
     border-radius: 20px;
 }

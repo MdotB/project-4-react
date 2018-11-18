@@ -1,7 +1,7 @@
 
 .Dashboard-container {
     display: grid;
-    width: 90%;
+    width: 99%;
     margin: auto;
     height: 100%;
     grid-gap: 10px;
@@ -11,13 +11,6 @@
         'Chart Chart Transactions'
         'AddTrans Balance Transactions'
         ;
-        
-    padding: 10px;
-}
-.Dashboard-h2 {
-    margin: 10px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
 }
 
 .AddTransaction-container {
