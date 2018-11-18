@@ -23,7 +23,7 @@ let TransactionList = ({transactions}) => {
       <div className='TransactionList-container'>
         <h2 className="TransactionList-h2">Transactions</h2>
         <div className="TransactionList-list list-group">
-            {transactionList}
+            {transactionList.reverse()}
         </div>
       </div>
     )
