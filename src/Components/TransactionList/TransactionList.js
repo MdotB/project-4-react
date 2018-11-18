@@ -18,12 +18,12 @@ let TransactionList = ({transactions}) => {
     ) : (
         <p className="center">Feed me transactions!</p>
     )
-    
+    console.log(transactionList)
     return (
       <div className='TransactionList-container'>
         <h2 className="TransactionList-h2">Transactions</h2>
         <div className="TransactionList-list list-group">
-            {transactionList.reverse()}
+            {transactionList}
         </div>
       </div>
     )
