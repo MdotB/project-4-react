@@ -3,7 +3,6 @@ import './Dashboard.css';
 import AddTransaction from '../AddTransaction/AddTransaction';
 import TransactionList from '../TransactionList/TransactionList';
 import Balance from '../Balance/Balance';
-import Chart from '../Chart/Chart';
 
 class Dashboard extends Component {
   state = {
@@ -17,8 +16,8 @@ class Dashboard extends Component {
   }
 
   getTransactions = () => {
-    fetch("http://localhost:4001")
-    // fetch("https://warm-wave-52595.herokuapp.com/")
+    // fetch("http://localhost:4001")
+    fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
