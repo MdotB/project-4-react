@@ -1,49 +1,34 @@
 import React, { Component } from 'react';
-import { Bar } from 'react-chartjs-2';
-import 'chartjs-plugin-annotation';
+import { Doughnut } from 'react-chartjs-2';
 import './Chart.css';
 
-export default class Chart extends Component {
-
-    state = {
-      chartData: {
-        labels: ['Automobile', 'Childcare', 'Food', 'Healthcare', 'Income', 'Internet', 'Misc.', 'Mortgage/Rent', 'Phone', 'Savings', 'Subscriptions', 'Taxes', 'Uncategorized', 'Utilities'],
-        dataSets: [
-          {
-            label: 'Amount',
-            data: [],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-            ]
-          }
-        ]
-      }
-      
-    }
-    
+class Chart extends Component {
+  
+  state = {
+    chartData: this.props.chartData
+  }
+  
   render() {
-    console.log(this.props.chartData);
+    console.log()
     return (
-      <div className='Chart-container'>
-      <Bar
-        data={this.state.chartData[0]}
-        options={{
-          title: {
-            display: true,
-            text: 'Allocation'
-          },
-          legend: {
-            display: true,
-            position: 'right'
-          }
-        }}
+      <div className='chart'>
+        <Doughnut
+          data={this.state.chartData}
+          options={{
+            maintainAspectRatio: false,
+            title: {
+              display: true,
+              text: 'Spend by Category'
+            },
+            legend:{
+              display: true,
+              position: 'right'
+            }
+          }}
         />
       </div>
     )
   }
 }
+
+export default Chart;

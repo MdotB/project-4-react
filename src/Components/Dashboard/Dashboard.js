@@ -8,7 +8,8 @@ import Chart from '../Chart/Chart';
 class Dashboard extends Component {
   state = {
     transactions: [],
-    total: 0
+    total: 0,
+    chartData: {}
   }
 
   componentDidMount() {
@@ -16,12 +17,12 @@ class Dashboard extends Component {
   }
 
   getTransactions = () => {
-    fetch("https://warm-wave-52595.herokuapp.com/")
+    fetch("http://localhost:4001")
+    // fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
       total: transactions.reduce( (a, b) => {
-        console.log(b.category)
         if (b.category === 'Income') {
           return a + b.amount;
         } else {
@@ -32,18 +33,44 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-    this.setState({
+    this.setState(
+      {
       transactions: this.state.transactions,
       total: this.state.transactions.reduce( (a, b) => {
         return a + b.amount;
       }, 0)
+      },
+      this.getChartData()
+    )
+  }
+  
+  getChartData = () => {
+    console.log(this.state)
+    this.setState({
+      chartData:{
+          labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge', 'New Bedford'],
+          datasets:[
+            {
+              label: 'Population',
+              data: this.state.transactions,
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+    
+              ]
+            }
+          ]
+      }
     })
   }
 
   render() {
     return (
       <div className='Dash-wrapper'>
-        <h2 className='Dashboard-h2'>Dashboard</h2>
         <div className='Dashboard-container'>
           <AddTransaction 
             className='AddTransaction-container' 
@@ -61,7 +88,6 @@ class Dashboard extends Component {
             total={this.state.total}
             transactions={this.state.transactions}
           />
-          <Chart chartData={this.state.transactions}/>
         </div>
       </div>
     )
