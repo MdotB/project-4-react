@@ -1,10 +1,10 @@
 # Project-4-Cash-Board
 
 ## Description
-Cash Board is a personal finance dashboard that allows users to log and track income and expense data, with visual data representation.
+Cash Board is a personal finance dashboard that allows users to log and track income and expense data.
 
 ## Brief Example (Screenshot)
-![](https://git.generalassemb.ly/MBell/Project-1-Strooper/blob/master/Strooper%20ScreenShot.png?raw=true)
+![](https://i.imgur.com/o8v3rESm.png)
 
 ## List of Features
 - Log income and expense transactions
@@ -21,7 +21,6 @@ Cash Board is a personal finance dashboard that allows users to log and track in
 - Express.js
 - MongoDB
 - Mongoose.js
-- Chart.js
 
 ## Installation Instructions/ Getting Started
 - Visit the project (fron-end) repository on [GitHub]https://github.com/MdotB/project-4-react
@@ -36,6 +35,5 @@ https://github.com/MdotB/project-4-express
   - Add Redux data stores
   - Implement authentication with JWT
   - Implement Chart.js for data visulization
-  - Add media queries for mobile-friendly design
   - Research and implement APIs for bank and cc transaction data.
   - Build out more components and allow user to select and customize dashboard
