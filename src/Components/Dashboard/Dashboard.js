@@ -38,9 +38,7 @@ class Dashboard extends Component {
       total: this.state.transactions.reduce( (a, b) => {
         return a + b.amount;
       }, 0)
-      },
-      this.getChartData()
-    )
+      })
   }
   
   // getChartData = () => {
