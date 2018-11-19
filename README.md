@@ -4,7 +4,7 @@
 Cash Board is a personal finance dashboard that allows users to log and track income and expense data.
 
 ## Brief Example (Screenshot)
-![](https://i.imgur.com/o8v3rESm.png)
+![](https://i.imgur.com/o8v3rESl.png)
 
 ## List of Features
 - Log income and expense transactions
