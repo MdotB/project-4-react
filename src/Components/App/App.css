@@ -1,8 +1,9 @@
 
 .App {
   font-family: 'Montserrat', sans-serif;
-  min-height: 100vh;
-  background-color: rgb(228, 228, 228);
+  max-height: 100vh;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 

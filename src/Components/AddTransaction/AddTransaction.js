@@ -22,8 +22,8 @@ export default class AddTransaction extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    Axios.post('https://warm-wave-52595.herokuapp.com/new',{
-    // Axios.post('http://localhost:4001/new',{
+    // Axios.post('https://warm-wave-52595.herokuapp.com/new',{
+    Axios.post('http://localhost:4001/new',{
       ...this.state
     }).then(postedTransaction => {
       console.log(postedTransaction)
@@ -62,7 +62,7 @@ export default class AddTransaction extends Component {
               <option value="Utilities">Utilities</option>
             </select>
           </div>
-          <button type="submit" className="btn btn-outline-primary">Add</button>
+          <button type="submit" className="AddTransaction-btn">Add</button>
         </form>
         </div>
       </div>

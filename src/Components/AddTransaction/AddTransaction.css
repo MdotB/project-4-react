@@ -1,6 +1,7 @@
 .AddTransaction-container {
     padding: 20px;
     background-color: white;
+    border: 1px solid #2A324B;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -10,6 +11,7 @@
 }
 .AddTransaction-h2 {
     font-family: 'Montserrat', sans-serif;
+    color: #2A324B;
     font-weight: 600;
     margin-bottom: 10px;
     font-size: 28px;
@@ -20,4 +22,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.AddTransaction-btn {
+    border: 1px solid #2A324B;
+    color: #2A324B;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: 500ms;
+}
+.AddTransaction-btn:hover {
+    border: 1px solid #2A324B;
+    background-color: #2A324B;
+    color: white;
+    
 }

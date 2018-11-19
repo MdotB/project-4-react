@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #333;
-    height: 70px;
+    background-color: #2A324B;
+    height: 65px;
+    margin-bottom: 10px;
 }
 .Header-ul {
     display: flex;
