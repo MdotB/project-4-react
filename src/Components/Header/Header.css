@@ -1,9 +1,10 @@
-.Header-wrapper {
+.Header-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #2A324B;
     height: 65px;
+    width: 100%;
     margin-bottom: 10px;
 }
 .Header-ul {

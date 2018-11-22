@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Header className='Header-wrapper'/>
+        <Header className='Header-container'/>
         <Route exact path="/" 
           render={() => <Dashboard className='Dashboard-container'/>}
         />

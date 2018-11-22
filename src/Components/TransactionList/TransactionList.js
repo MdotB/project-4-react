@@ -3,7 +3,7 @@ import './TransactionList.css';
 
 let TransactionList = ({transactions}) => {
     const transactionList = transactions.length ? (
-        transactions.map(transaction => {
+        transactions.reverse().map(transaction => {
             let style = {
                 color: transaction.category === 'Income' ? 'green' : 'red'
             };
@@ -11,6 +11,7 @@ let TransactionList = ({transactions}) => {
             return (
               <div className='Transaction-container list-group-item' key={transaction.id}>
                 <p >{transaction.category}</p>
+                <p>{transaction.date}</p>
                 <p className='TransactionList-amount' style={style}>{transaction.amount}</p>
               </div>
             )

@@ -8,7 +8,7 @@ class Dashboard extends Component {
   state = {
     transactions: [],
     total: 0,
-    chartData: {}
+    date: ''
   }
 
   componentDidMount() {
@@ -16,8 +16,8 @@ class Dashboard extends Component {
   }
 
   getTransactions = () => {
-    // fetch("http://localhost:4001")
-    fetch("https://warm-wave-52595.herokuapp.com/")
+    fetch("http://localhost:4001")
+    // fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
@@ -67,9 +67,8 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className='Dash-wrapper'>
         <div className='Dashboard-container'>
-        <Balance
+          <Balance
             className='Balance-container'
             total={this.state.total}
             transactions={this.state.transactions}
@@ -86,7 +85,7 @@ class Dashboard extends Component {
             deleteTransaction={this.deleteTransaction}
           />
         </div>
-      </div>
+      
     )
   }
 }

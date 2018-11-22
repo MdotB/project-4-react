@@ -4,7 +4,7 @@ import './Header.css';
 export default class Header extends Component {
   render() {
     return (
-      <div className='Header-wrapper'>
+      <header className='Header-container'>
         <h1 className='Header-h1'>Cash Board</h1>
         <nav>
             <ul className='Header-ul'>                
@@ -12,7 +12,7 @@ export default class Header extends Component {
               <li className='Header-li'></li>
             </ul>
         </nav>
-      </div>
+      </header>
     )
   }
 }

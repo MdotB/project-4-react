@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    border-bottom-left-radius: 25px;
 
 }
 .AddTransaction-h2 {
@@ -35,4 +36,9 @@
     background-color: #2A324B;
     color: white;
     
+}
+@media (max-width: 420px) {
+    .AddTransaction-container {
+        border-bottom-left-radius: 0;
+    }
 }
