@@ -2,7 +2,7 @@
 .App {
   background-color: rgb(205, 205, 205);
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 140px 1fr;
   grid-template-rows: 2;
   grid-template-areas: 
     'header dashboard'
@@ -15,7 +15,6 @@
 }
 .Header-container {
   grid-area: header;
-  width: 70px;
 }
 .Dashboard-container {
   grid-area: dashboard;

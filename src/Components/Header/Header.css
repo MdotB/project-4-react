@@ -5,10 +5,12 @@
     align-items: center;
     background-color: #333;
     height: 100%;
-    width: 100px;
+    width: 140px;
 }
 .Header-ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
 }
 .Header-h2 {
@@ -20,9 +22,12 @@
     .Header-container {
       flex-direction: row;
       justify-content: center;
+      align-items: center;
       width: 100%;
     }
     .Header-h2 {
         font-size: 16px;
+        font-weight: 800;
+        margin: 10px;
     }
   }
