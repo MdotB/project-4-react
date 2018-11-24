@@ -1,20 +1,33 @@
 
 .App {
+  background-color: rgb(205, 205, 205);
   display: grid;
+  grid-template-columns: 100px 1fr;
   grid-template-rows: 2;
   grid-template-areas: 
-    'header'
-    'dashboard';
+    'header dashboard'
+    'header dashboard'
+    ;
   font-family: 'Montserrat', sans-serif;
-  height: calc(100vh - 70px);
+  height: 100vh;
   max-width: 1080px;
   margin: 0 auto;
 }
 .Header-container {
   grid-area: header;
+  width: 70px;
 }
 .Dashboard-container {
   grid-area: dashboard;
+}
+@media (max-width: 490px) {
+  .App {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'header'
+    'dashboard'
+    ;
+  }
 }
 
 

@@ -4,7 +4,7 @@ import Axios from "axios";
 
 export default class AddTransaction extends Component {
   state = {
-    amount: 0,
+    amount: '',
     category: '',
     date: ''
   }
@@ -31,7 +31,7 @@ export default class AddTransaction extends Component {
       console.log(postedTransaction)
       this.props.getTransactions()
     }, this.setState({
-      amount: 0,
+      amount: '',
       category: '',
     }))
   }
@@ -43,7 +43,7 @@ export default class AddTransaction extends Component {
         <div className='AddTransaction-flex-wrapper'>
         <form method='POST' onSubmit={this.handleSubmit}>
           <div className="">
-            <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} />
+            <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} value={this.state.amount}/>
           </div>
           <div className="input-group mb-3">
             <select id='category' selected="select..." onChange={this.handleChangeCat} className="custom-select" value={this.state.category}>

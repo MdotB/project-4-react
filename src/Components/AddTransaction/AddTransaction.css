@@ -1,13 +1,11 @@
 .AddTransaction-container {
     padding: 20px;
     background-color: white;
-    border: 1px solid #2A324B;
     display: flex;
     text-align: center;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-bottom-left-radius: 25px;
 
 }
 .AddTransaction-h2 {
@@ -37,7 +35,7 @@
     color: white;
     
 }
-@media (max-width: 420px) {
+@media (max-width: 490px) {
     .AddTransaction-container {
         border-bottom-left-radius: 0;
     }

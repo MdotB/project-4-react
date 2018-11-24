@@ -1,7 +1,8 @@
 
 .Dashboard-container {
+    margin: 10px;
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 10px;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
@@ -19,7 +20,7 @@
 .Balance-container {
     grid-area: Balance;
 }
-@media (max-width: 420px) {
+@media (max-width: 490px) {
     .Dashboard-container {
         grid-template-columns: repeat(1, minmax(200px, 1fr));
         grid-auto-rows: repeat(3, 1fr);

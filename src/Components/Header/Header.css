@@ -1,17 +1,28 @@
 .Header-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    background-color: #2A324B;
-    height: 65px;
-    width: 100%;
-    margin-bottom: 10px;
+    background-color: #333;
+    height: 100%;
+    width: 100px;
 }
 .Header-ul {
     display: flex;
     list-style: none;
 }
-.Header-h1 {
+.Header-h2 {
     color: white;
-    font-size: 30px;
+    font-size: 16px;
+    margin: 10px 0 10px 0;
 }
+@media (max-width: 490px) {
+    .Header-container {
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+    }
+    .Header-h2 {
+        font-size: 16px;
+    }
+  }
