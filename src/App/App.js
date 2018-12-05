@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-import Header from '../Header/Header';
-import Dashboard from '../Dashboard/Dashboard';
+import Header from '../Components/Header/Header';
+import Dashboard from '../Components/Dashboard/Dashboard';
 import { Provider } from 'react-redux';
 import store from '../store';
 
