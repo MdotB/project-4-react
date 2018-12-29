@@ -4,9 +4,10 @@ import Axios from "axios";
 
 export default class AddTransaction extends Component {
   state = {
+    _id: '',
     amount: '',
     category: '',
-    date: ''
+    date: new Date()
   }
 
   handleChangeAmount = (e) => {
@@ -24,8 +25,11 @@ export default class AddTransaction extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(new Date())
-    Axios.post('https://warm-wave-52595.herokuapp.com/new',{
-    // Axios.post('http://localhost:4001/new',{
+    this.setState({
+      date: new Date()
+    })
+    // Axios.post('https://warm-wave-52595.herokuapp.com/new',{
+    Axios.post('http://localhost:4001/new',{
       ...this.state
     }).then(postedTransaction => {
       console.log(postedTransaction)
@@ -33,6 +37,7 @@ export default class AddTransaction extends Component {
     }, this.setState({
       amount: '',
       category: '',
+      data: ''
     }))
   }
   
