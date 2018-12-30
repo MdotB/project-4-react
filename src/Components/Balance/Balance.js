@@ -10,7 +10,7 @@ const Balance = ({total}) => {
     return (
       <div className='Balance-container'>
         <h2 className='Balance-h2'>Balance</h2>
-        <p style={style}>${ total }</p>
+        <p style={style}>${ total.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }</p>
       </div>
     )
 }
