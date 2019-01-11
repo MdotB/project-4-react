@@ -48,10 +48,10 @@ export default class AddTransaction extends Component {
         <div className='AddTransaction-flex-wrapper'>
         <form method='POST' onSubmit={this.handleSubmit}>
           <div className="">
-            <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} value={this.state.amount}/>
+            <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} value={this.state.amount} required/>
           </div>
           <div className="input-group mb-3">
-            <select id='category' selected="select..." onChange={this.handleChangeCat} className="custom-select" value={this.state.category}>
+            <select id='category' selected="select..." onChange={this.handleChangeCat} className="custom-select" value={this.state.category} required>
               <option value="">categorize...</option>
               <option value="Automobile">Automobile</option>
               <option value="Child Care">Child Care</option>
