@@ -1,16 +1,14 @@
 
 .Dashboard-container {
+    height: calc(100vh - 70px);
     margin: 10px;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
-        'AddTrans Balance'
-        'Transactions Transactions'
-        'Transactions Transactions'
-        ;
-    border-radius: 20px;
+        'Balance Transactions'
+        'AddTrans Transactions';
 }
 .AddTransaction-container {
     grid-area: AddTrans;
@@ -23,13 +21,12 @@
 }
 @media (max-width: 490px) {
     .Dashboard-container {
-        grid-template-columns: minmax(100px, 1fr);
-        grid-auto-rows: repeat(minmax(100px, auto));
+        grid-template-columns: 1fr;
+        grid-template-rows: 15vh 45vh auto;
         grid-template-areas:
             'Balance'
-            'AddTrans'
             'Transactions'
-            'Transations';
+            'AddTrans';
     }
     .AddTransaction-container {
         grid-area: AddTrans;

@@ -6,16 +6,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    border-radius: 10px;
 }
 .AddTransaction-h2 {
     font-family: 'Montserrat', sans-serif;
-    color: #2A324B;
+    color: #333;
     font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 28px;
+    margin-bottom: 15px;
+    font-size: 25px;
 }
-.AddTransaction-flex-wrapper {
+.AddTransaction-form-wrapper {
     display: flex;
     text-align: center;
     flex-direction: row;
@@ -23,20 +23,24 @@
     align-items: center;
 }
 .AddTransaction-btn {
-    border: 1px solid #2A324B;
-    color: #2A324B;
+    border: 1px solid #333;
+    color: #333;
     padding: 10px 15px;
     border-radius: 6px;
-    transition: 500ms;
+    transition: 300ms;
 }
 .AddTransaction-btn:hover {
     border: 1px solid #2A324B;
     background-color: #2A324B;
     color: white;
-    
+}
+input:focus {
+    outline: none;
 }
 @media (max-width: 490px) {
     .AddTransaction-container {
-        border-bottom-left-radius: 0;
+    }
+    .AddTransaction-h2 {
+        font-size: 25px;
     }
 }

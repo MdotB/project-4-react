@@ -45,7 +45,7 @@ export default class AddTransaction extends Component {
     return (
       <div className='AddTransaction-container'>
         <h2 className='AddTransaction-h2'>Add Transaction</h2>
-        <div className='AddTransaction-flex-wrapper'>
+        <div className='AddTransaction-form-wrapper'>
         <form method='POST' onSubmit={this.handleSubmit}>
           <div className="">
             <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} value={this.state.amount} required/>
