@@ -12,7 +12,7 @@ let TransactionList = ({transactions}) => {
               <div className='Transaction-container list-group-item' key={transaction._id}>
                 <p >{transaction.category}</p>
                 <p>{transaction.date}</p>
-                <p className='TransactionList-amount' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                <p className='TransactionList-amount' style={style}>${transaction.amount.toFixed(2)}</p>
               </div>
             )
         })
