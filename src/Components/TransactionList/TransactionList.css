@@ -12,17 +12,17 @@
     font-size: 28px;
     margin: 30px 0 30px 0;
 }
-.TransactionList-amount {
-    height: 10px;
-    text-align: right;
-    font-size: 22px;
-}
 .TransactionList-list {
     background-color: white;
     width: 100%;
     height: 490px;
     overflow-y: scroll;
     box-shadow: 10px;
+}
+.Transaction-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .center {
     text-align: center;
