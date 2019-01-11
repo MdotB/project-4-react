@@ -7,7 +7,7 @@ export default class AddTransaction extends Component {
     _id: '',
     amount: '',
     category: '',
-    date: new Date()
+    date: ''
   }
 
   handleChangeAmount = (e) => {

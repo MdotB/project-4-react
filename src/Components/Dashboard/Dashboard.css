@@ -1,14 +1,22 @@
 
 .Dashboard-container {
-    height: calc(100vh - 70px);
-    margin: 10px;
+    background-color: #333;
+    background-image: url("../../Images/bg-image.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 50px);
+    max-width: 1080px;
+    margin: 5px;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    padding: 5px;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
-        'Balance Transactions'
-        'AddTrans Transactions';
+        '. AddTrans AddTrans Transactions'
+        '. . Balance Transactions'
+        '. . . Transactions';
 }
 .AddTransaction-container {
     grid-area: AddTrans;

@@ -1,9 +1,8 @@
 .TransactionList-container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, .6);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
 }
 .TransactionList-h2 {
     font-family: 'Montserrat', sans-serif;
@@ -13,16 +12,19 @@
     margin: 15px 0;
 }
 .TransactionList-list {
-    background-color: white;
+    background-color: rgba(255, 255, 255, .0);
     width: 100%;
-    height: 100%;
+    max-height: 550px;
     overflow-y: scroll;
     box-shadow: 10px;
+    border-radius: 0 10px;
 }
 .Transaction-container {
+    background-color: rgba(255, 255, 255, .0);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 19px;
 }
 .center {
     text-align: center;
