@@ -8,7 +8,7 @@
     font-family: 'Montserrat', sans-serif;
     color: #333;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 22px;
     margin: 15px 0;
 }
 .TransactionList-list {
@@ -17,14 +17,13 @@
     max-height: 550px;
     overflow-y: scroll;
     box-shadow: 10px;
-    border-radius: 0 10px;
 }
 .Transaction-container {
     background-color: rgba(255, 255, 255, .0);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 19px;
+    padding: 20px;
 }
 .center {
     text-align: center;

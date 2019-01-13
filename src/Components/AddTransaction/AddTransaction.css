@@ -12,7 +12,7 @@
     color: #333;
     font-weight: 600;
     margin-bottom: 15px;
-    font-size: 25px;
+    font-size: 22px;
 }
 .AddTransaction-form-wrapper {
     display: flex;
@@ -30,7 +30,7 @@ form {
     color: #fff;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: 300ms;
+    transition: 200ms;
     height: 100%;
 }
 .AddTransaction-btn:hover {
