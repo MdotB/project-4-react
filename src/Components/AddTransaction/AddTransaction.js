@@ -12,7 +12,7 @@ export default class AddTransaction extends Component {
 
   handleChangeAmount = (e) => {
     this.setState(
-      {[e.target.id]: parseInt(e.target.value, 10)}
+      {[e.target.id]: parseFloat(e.target.value, 10)}
       );
   }
 
