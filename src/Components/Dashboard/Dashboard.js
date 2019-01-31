@@ -3,6 +3,7 @@ import './Dashboard.css';
 import AddTransaction from '../AddTransaction/AddTransaction';
 import TransactionList from '../TransactionList/TransactionList';
 import Balance from '../Balance/Balance';
+import Axios from "axios";
 
 class Dashboard extends Component {
   state = {
@@ -14,8 +15,17 @@ class Dashboard extends Component {
     this.getTransactions()
   }
 
+  componentWillMount() {
+    this.setState({
+      transactions: this.state.transactions,
+      total: this.state.transactions.reduce( (a, b) => {
+        return a + b.amount;
+      }, 0)
+      })
+  }
+
   getTransactions = () => {
-    fetch("http://localhost:4001")
+    fetch("http://localhost:4001/")
     // fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
@@ -30,14 +40,10 @@ class Dashboard extends Component {
     }));
   }
 
-  componentWillMount() {
-    this.setState(
-      {
-      transactions: this.state.transactions,
-      total: this.state.transactions.reduce( (a, b) => {
-        return a + b.amount;
-      }, 0)
-      })
+  deleteTransaction = (id) => {
+    // Axios.post('https://warm-wave-52595.herokuapp.com/delete/:id',{
+    Axios.delete('http://localhost:4001/delete/:id',{
+    })
   }
 
   render() {
@@ -55,7 +61,6 @@ class Dashboard extends Component {
           <TransactionList
             className='TransactionList-container'
             transactions={this.state.transactions}
-            transactionDate={this.state.date}
             deleteTransaction={this.deleteTransaction}
           />
         </div>

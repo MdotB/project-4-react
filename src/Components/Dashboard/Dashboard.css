@@ -11,9 +11,9 @@
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: auto auto auto;
     grid-template-areas:
-        '. Balance Transactions Transactions '
-        '. AddTrans Transactions Transactions'
-        '. . Transactions Transactions';
+        '. Balance Transactions .'
+        '. AddTrans Transactions .'
+        '. . . .';
 }
 .AddTransaction-container {
     grid-area: AddTrans;

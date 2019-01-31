@@ -7,7 +7,7 @@ export default class AddTransaction extends Component {
     _id: '',
     amount: '',
     category: '',
-    date: null
+    date: ''
   }
 
   handleChangeAmount = (e) => {
@@ -30,7 +30,6 @@ export default class AddTransaction extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(new Date().toLocaleString)
     // Axios.post('https://warm-wave-52595.herokuapp.com/new',{
     Axios.post('http://localhost:4001/new',{
       ...this.state
@@ -40,7 +39,7 @@ export default class AddTransaction extends Component {
     }, this.setState({
       amount: '',
       category: '',
-      date: null
+      date: ''
     }))
   }
   

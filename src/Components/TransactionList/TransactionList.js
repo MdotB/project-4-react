@@ -1,7 +1,9 @@
 import React from 'react';
 import './TransactionList.css';
 
-let TransactionList = ({ transactions }) => {
+
+const TransactionList = ({ transactions, deleteTransaction }) => {
+
     const transactionList = transactions.length ? (
         transactions.reverse().map(transaction => {
             let style = {
@@ -10,9 +12,12 @@ let TransactionList = ({ transactions }) => {
         
             return (
               <div className='Transaction-container list-group-item' key={transaction._id}>
-                <p className="category">{transaction.category}</p>
-                <p>{transaction.date}</p>
-                <p className='transaction-amount' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                  <div>
+                    <p>{transaction.date}</p>
+                    <p className="category">{transaction.category}</p>
+                    <p className='transaction-amount' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                  </div>
+                  <button className="delete" onClick={() => deleteTransaction(transaction._id)}><i className="fas fa-trash-alt"></i></button>
               </div>
             )
         })
