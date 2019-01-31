@@ -8,12 +8,12 @@
     display: grid;
     padding: 5px;
     grid-gap: 5px;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     grid-template-rows: auto auto auto;
     grid-template-areas:
-        '. Balance Transactions .'
-        '. AddTrans Transactions .'
-        '. . . .';
+        '. Balance Transactions Transactions .'
+        '. AddTrans Transactions Transactions .'
+        '. . . . .';
 }
 .AddTransaction-container {
     grid-area: AddTrans;

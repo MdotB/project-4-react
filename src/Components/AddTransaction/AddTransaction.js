@@ -38,8 +38,7 @@ export default class AddTransaction extends Component {
       this.props.getTransactions()
     }, this.setState({
       amount: '',
-      category: '',
-      date: ''
+      category: ''
     }))
   }
   
@@ -50,10 +49,10 @@ export default class AddTransaction extends Component {
         <div className='AddTransaction-form-wrapper'>
         <form method='POST' onSubmit={this.handleSubmit}>
           <div>
-            <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} value={this.state.amount} required/>
+            <input id='amount' type="number" placeholder='$' className="input-field" onChange={this.handleChangeAmount} value={this.state.amount} required/>
           </div>
           <div className="">
-            <select id='category' selected="select..." onChange={this.handleChangeCat} className="custom-select" value={this.state.category} required>
+            <select id='category' selected="select..." onChange={this.handleChangeCat} className="input-field" value={this.state.category} required>
               <option value="">categorize...</option>
               <option value="Automobile">Automobile</option>
               <option value="Child Care">Child Care</option>
@@ -71,7 +70,7 @@ export default class AddTransaction extends Component {
             </select>
           </div>
           <div>
-            <input id="date" type="date" onChange={this.handleChangeDate} required/>
+            <input id="date" type="date" className="input-field" onChange={this.handleChangeDate} required/>
           </div>
           <button type="submit" className="AddTransaction-btn">Add</button>
         </form>

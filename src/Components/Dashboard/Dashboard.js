@@ -40,8 +40,9 @@ class Dashboard extends Component {
     }));
   }
 
+  // Delete transaction by id and then get transactions
   deleteTransaction = (id) => {
-    // Axios.post('https://warm-wave-52595.herokuapp.com/delete/:id')
+    // Axios.post(`https://warm-wave-52595.herokuapp.com/delete/${id}`)
     Axios.delete(`http://localhost:4001/delete/${id}`)
     .then(res => {
       console.log(res);
