@@ -8,21 +8,21 @@
     align-items: center;
 }
 .AddTransaction-h2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat',Arial, Helvetica, sans-serif;
     color: #333;
-    font-weight: 600;
     margin-bottom: 15px;
     font-size: 22px;
 }
 .AddTransaction-form-wrapper {
     display: flex;
     text-align: center;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 form {
     display: flex;
+    flex-direction: column;
 }
 .AddTransaction-btn {
     border: 1px solid #777;
@@ -36,7 +36,7 @@ form {
 .AddTransaction-btn:hover {
     border: 1px solid #333;
     background-color: #333;
-    color: fff;
+    color: #fff;
 }
 input:focus {
     outline: none;

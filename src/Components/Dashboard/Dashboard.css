@@ -9,10 +9,11 @@
     padding: 5px;
     grid-gap: 5px;
     grid-template-columns: repeat(4,1fr);
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
-        '. Balance AddTrans . '
-        '. Transactions Transactions .';
+        '. Balance Transactions Transactions '
+        '. AddTrans Transactions Transactions'
+        '. . Transactions Transactions';
 }
 .AddTransaction-container {
     grid-area: AddTrans;

@@ -7,8 +7,7 @@ import Balance from '../Balance/Balance';
 class Dashboard extends Component {
   state = {
     transactions: [],
-    total: 0,
-    date: ''
+    total: 0
   }
 
   componentDidMount() {
@@ -16,8 +15,8 @@ class Dashboard extends Component {
   }
 
   getTransactions = () => {
-    // fetch("http://localhost:4001")
-    fetch("https://warm-wave-52595.herokuapp.com/")
+    fetch("http://localhost:4001")
+    // fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
@@ -51,13 +50,12 @@ class Dashboard extends Component {
           />
           <AddTransaction 
             className='AddTransaction-container' 
-            transactions={this.state.transactions}
             getTransactions={this.getTransactions}
           />
           <TransactionList
             className='TransactionList-container'
             transactions={this.state.transactions}
-            total={this.state.total}
+            transactionDate={this.state.date}
             deleteTransaction={this.deleteTransaction}
           />
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './TransactionList.css';
 
-let TransactionList = ({transactions}) => {
+let TransactionList = ({ transactions }) => {
     const transactionList = transactions.length ? (
         transactions.reverse().map(transaction => {
             let style = {
@@ -10,7 +10,7 @@ let TransactionList = ({transactions}) => {
         
             return (
               <div className='Transaction-container list-group-item' key={transaction._id}>
-                <p >{transaction.category}</p>
+                <p className="category">{transaction.category}</p>
                 <p>{transaction.date}</p>
                 <p className='transaction-amount' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
               </div>

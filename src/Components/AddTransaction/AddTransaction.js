@@ -7,7 +7,7 @@ export default class AddTransaction extends Component {
     _id: '',
     amount: '',
     category: '',
-    date: ''
+    date: null
   }
 
   handleChangeAmount = (e) => {
@@ -22,14 +22,17 @@ export default class AddTransaction extends Component {
     })
   }
 
+  handleChangeDate = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(new Date())
-    this.setState({
-      date: new Date()
-    })
-    Axios.post('https://warm-wave-52595.herokuapp.com/new',{
-    // Axios.post('http://localhost:4001/new',{
+    console.log(new Date().toLocaleString)
+    // Axios.post('https://warm-wave-52595.herokuapp.com/new',{
+    Axios.post('http://localhost:4001/new',{
       ...this.state
     }).then(postedTransaction => {
       console.log(postedTransaction)
@@ -37,7 +40,7 @@ export default class AddTransaction extends Component {
     }, this.setState({
       amount: '',
       category: '',
-      data: ''
+      date: null
     }))
   }
   
@@ -47,10 +50,10 @@ export default class AddTransaction extends Component {
         <h2 className='AddTransaction-h2'>Add Transaction</h2>
         <div className='AddTransaction-form-wrapper'>
         <form method='POST' onSubmit={this.handleSubmit}>
-          <div className="">
+          <div>
             <input id='amount' type="number" placeholder='$' className="form-control" onChange={this.handleChangeAmount} value={this.state.amount} required/>
           </div>
-          <div className="input-group mb-3">
+          <div className="">
             <select id='category' selected="select..." onChange={this.handleChangeCat} className="custom-select" value={this.state.category} required>
               <option value="">categorize...</option>
               <option value="Automobile">Automobile</option>
@@ -67,6 +70,9 @@ export default class AddTransaction extends Component {
               <option value="Taxes">Taxes</option>
               <option value="Utilities">Utilities</option>
             </select>
+          </div>
+          <div>
+            <input id="date" type="date" onChange={this.handleChangeDate} required/>
           </div>
           <button type="submit" className="AddTransaction-btn">Add</button>
         </form>
