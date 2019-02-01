@@ -48,30 +48,24 @@ export default class AddTransaction extends Component {
         <h2 className='AddTransaction-h2'>Add Transaction</h2>
         <div className='AddTransaction-form-wrapper'>
         <form method='POST' onSubmit={this.handleSubmit}>
-          <div>
-            <input id='amount' type="number" placeholder='$' className="input-field" onChange={this.handleChangeAmount} value={this.state.amount} required/>
-          </div>
-          <div className="">
-            <select id='category' selected="select..." onChange={this.handleChangeCat} className="input-field" value={this.state.category} required>
-              <option value="">categorize...</option>
-              <option value="Automobile">Automobile</option>
-              <option value="Child Care">Child Care</option>
-              <option value="Food">Food</option>
-              <option value="Healthcare">Healthcare</option>
-              <option value="Income">Income</option>
-              <option value="Internet">Internet</option>
-              <option value="Misc.">Misc.</option>
-              <option value="Mortgage/Rent">Mortgage/Rent</option>
-              <option value="Phone">Phone</option>
-              <option value="Savings">Savings</option>
-              <option value="Subscriptions">Subscriptions</option>
-              <option value="Taxes">Taxes</option>
-              <option value="Utilities">Utilities</option>
-            </select>
-          </div>
-          <div>
-            <input id="date" type="date" className="input-field" onChange={this.handleChangeDate} required/>
-          </div>
+          <input id='amount' type="number" placeholder='$' className="input-field" onChange={this.handleChangeAmount} value={this.state.amount} required/>
+          <select id='category' selected="select..." onChange={this.handleChangeCat} className="input-field" value={this.state.category} required>
+            <option value="">categorize...</option>
+            <option value="Automobile">Automobile</option>
+            <option value="Child Care">Child Care</option>
+            <option value="Food">Food</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Income">Income</option>
+            <option value="Internet">Internet</option>
+            <option value="Misc.">Misc.</option>
+            <option value="Mortgage/Rent">Mortgage/Rent</option>
+            <option value="Phone">Phone</option>
+            <option value="Savings">Savings</option>
+            <option value="Subscriptions">Subscriptions</option>
+            <option value="Taxes">Taxes</option>
+            <option value="Utilities">Utilities</option>
+          </select>
+          <input id="date" type="date" className="input-field" onChange={this.handleChangeDate} required/>
           <button type="submit" className="AddTransaction-btn">Add</button>
         </form>
         </div>

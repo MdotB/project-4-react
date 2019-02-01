@@ -12,6 +12,7 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
+    console.log("component mounted")
     this.getTransactions()
   }
 
@@ -30,7 +31,7 @@ class Dashboard extends Component {
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
-      total: transactions.reduce( (a, b) => {
+      total: transactions.reduce( (a, b) => { // Add income and subtract expenses
         if (b.category === 'Income') {
           return a + b.amount;
         } else {

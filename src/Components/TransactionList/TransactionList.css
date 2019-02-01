@@ -7,16 +7,13 @@
 .TransactionList-h2 {
     font-family: 'Montserrat', sans-serif;
     color: #333;
-    font-weight: 600;
     font-size: 22px;
     margin: 15px 0;
 }
 .TransactionList-list {
     background-color: rgba(255, 255, 255, .0);
     width: 100%;
-    overflow-y: scroll;
-    padding-bottom: 25px;
-    max-height: 200px;
+    max-height: 600px;
     overflow-y: scroll;
 }
 .Transaction-container {
@@ -25,7 +22,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
+    min-height: 70px;
+}
+.transaction-data {
     padding: 20px;
+}
+.transaction-amount {
+    font-weight: bold;
 }
 .center {
     text-align: center;
@@ -37,9 +41,13 @@
     background-color: rgba(0,0,0,0);
     border-color: rgba(0,0,0,0);
     transition: all .3s;
+    font-size: 20px;
+    padding: 20px;
+    height: 100%;
 }
 .delete:hover {
     color: red;
+    cursor: pointer;
 }
 .delete:focus {
     outline: none;
@@ -47,7 +55,6 @@
 
 @media (max-width: 490px) {
     .Transaction-container {
-        padding: 30px;
-        font-size: 12px;
+        font-size: 16px;
     }
 }

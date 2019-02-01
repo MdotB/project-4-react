@@ -12,7 +12,7 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
         
             return (
               <div className='Transaction-container list-group-item' key={transaction._id}>
-                  <div>
+                  <div className="transaction-data">
                     <p>{transaction.date}</p>
                     <p className="category">{transaction.category}</p>
                     <p className='transaction-amount' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
