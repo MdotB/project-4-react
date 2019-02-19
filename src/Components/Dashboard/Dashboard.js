@@ -3,7 +3,9 @@ import './Dashboard.css';
 import AddTransaction from '../AddTransaction/AddTransaction';
 import TransactionList from '../TransactionList/TransactionList';
 import Balance from '../Balance/Balance';
+import Transaction from '../Transaction/Transaction';
 import Axios from "axios";
+import { Route } from 'react-router-dom';
 
 class Dashboard extends Component {
   state = {
@@ -18,7 +20,6 @@ class Dashboard extends Component {
 
   componentWillMount() {
     this.setState({
-      transactions: this.state.transactions,
       total: this.state.transactions.reduce( (a, b) => {
         return a + b.amount;
       }, 0)
@@ -26,8 +27,8 @@ class Dashboard extends Component {
   }
 
   getTransactions = () => {
-    // fetch("http://localhost:4001/")
-    fetch("https://warm-wave-52595.herokuapp.com/")
+    fetch("http://localhost:4001/")
+    // fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
@@ -40,11 +41,12 @@ class Dashboard extends Component {
       }, 0)
     }));
   }
+  
 
   // Delete transaction by id and then get transactions
   deleteTransaction = (id) => {
-    Axios.delete(`https://warm-wave-52595.herokuapp.com/delete/${id}`)
-    // Axios.delete(`http://localhost:4001/delete/${id}`)
+    // Axios.delete(`https://warm-wave-52595.herokuapp.com/delete/${id}`)
+    Axios.delete(`http://localhost:4001/delete/${id}`)
     .then(res => {
       console.log(res);
       this.getTransactions()
@@ -71,6 +73,14 @@ class Dashboard extends Component {
             transactions={this.state.transactions}
             deleteTransaction={this.deleteTransaction}
           />
+          <Route path="/:transaction_id" component={Transaction} />
+          {/* <Route path="/:transaction_id"
+            render={(routerProps) => <Transaction
+              className="TransDetail-container"
+              transactions={this.state.transactions}
+              deleteTransaction={this.deleteTransaction}
+            />}
+          /> */}
         </div>
       
     )

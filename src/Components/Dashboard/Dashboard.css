@@ -8,19 +8,21 @@
     display: grid;
     padding: 5px;
     grid-gap: 5px;
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
     grid-template-rows: 15vh 45vh auto;
     grid-template-areas:
-        'Balance Balance'
-        'Transactions .'
-        'Transactions .'
-        'AddTrans AddTrans';
+        'Balance Balance Balance Balance'
+        'TransactionList TransactionList Transaction Transaction'
+        'TransactionList TransactionList AddTrans AddTrans';
 }
 .AddTransaction-container {
     grid-area: AddTrans;
 }
 .TransactionList-container {
-    grid-area: Transactions;
+    grid-area: TransactionList;
+}
+.TransDetail-container {
+    grid-area: Transaction;
 }
 .Balance-container {
     grid-area: Balance;
@@ -31,26 +33,9 @@
         grid-template-rows: 15vh 45vh auto;
         grid-template-areas:
             'Balance'
-            'Transactions'
+            'TransactionList'
             'AddTrans';
     }
 }
 @media (max-width: 490px) {
-    .Dashboard-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 15vh 45vh auto;
-        grid-template-areas:
-            'Balance'
-            'Transactions'
-            'AddTrans';
-    }
-    .AddTransaction-container {
-        grid-area: AddTrans;
-    }
-    .TransactionList-container {
-        grid-area: Transactions;
-    }
-    .Balance-container {
-        grid-area: Balance;
-    }
 }

@@ -1,0 +1,14 @@
+.TransDetail-container {
+    background-color: rgba(255, 255, 255, .6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+}
+.TransDetail-h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 22px;
+    margin: 15px 0;
+}

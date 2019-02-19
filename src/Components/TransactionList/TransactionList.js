@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './TransactionList.css';
 
 
@@ -12,13 +13,16 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
         
             return (
               <div className='Transaction-container list-group-item' key={transaction._id}>
-                  <div className="transaction-data">
-                    <p>{transaction.date}</p>
-                    <p className="category">{transaction.category}</p>
-                    <p className='transaction-amount' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-                  </div>
-                  <button className="delete" onClick={() => deleteTransaction(transaction._id)}><i className="fas fa-trash-alt"></i></button>
+                <Link to={"/" + transaction._id}>
+                    <div className="transaction-data">
+                        <p>{transaction.date}</p>
+                        <p className="category">{transaction.category}</p>
+                        <p className='transaction-amount' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+                    </div>
+                </Link>
+                    <button className="delete" onClick={() => deleteTransaction(transaction._id)}><i className="fas fa-trash-alt"></i></button>
               </div>
+              
             )
         })
     ) : (
