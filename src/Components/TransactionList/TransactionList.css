@@ -34,12 +34,11 @@
 }
 #transactions thead th {
     background-color: #333;
-    width: 100%;
 }
 #transactions tbody tr td, #transactions thead tr th {
     border: .1px solid #333;
     padding: 8px;
-    width: 50%;
+    width: 500px;
   }
 tr:nth-child(even) {
     background-color: #ddd;
