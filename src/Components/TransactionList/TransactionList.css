@@ -14,29 +14,32 @@
     margin: 15px 0;
 }
 
-#table-overflow-y {
-    position: absolute;
-    top: 52px;
-    height: 90%;
-    width: 100%;
-    overflow: auto;
-}
 #transactions {
     table-layout: fixed;
     border-collapse: collapse;
     width: 100%;
+    height: 90%;
     padding: 0;
     color: #333;
 }
-/* #transactions thead {
+
+#transactions tbody {
     display: block;
-} */
-#transactions th {
-    background-color: #333;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
 }
-#transactions td, #transactions th {
+#transactions thead tr {
+    display: block;
+}
+#transactions thead th {
+    background-color: #333;
+    width: 100%;
+}
+#transactions tbody tr td, #transactions thead tr th {
     border: .1px solid #333;
     padding: 8px;
+    width: 50%;
   }
 tr:nth-child(even) {
     background-color: #ddd;
@@ -52,24 +55,14 @@ tr:nth-child(even) {
 .bold {
     font-weight: bold;
 }
-.pos-fixed {
-    position: fixed;
-    
-}
-/* .Transaction-container {
-    background-color: rgba(255, 255, 255, .0);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    min-height: 70px;
-} */
 
 .transaction-data {
     padding: 20px;
     display: flex;
     width: 100%;
+}
+.align-left {
+    text-align: left;
 }
 .align-right {
     text-align: right;
@@ -82,21 +75,7 @@ tr:nth-child(even) {
     padding: 0;
     text-decoration: none;
 }
-.delete {
-    background-color: rgba(0,0,0,0);
-    border-color: rgba(0,0,0,0);
-    transition: all .3s;
-    font-size: 20px;
-    padding: 20px;
-    height: 100%;
-}
-.delete:hover {
-    color: red;
-    cursor: pointer;
-}
-.delete:focus {
-    outline: none;
-}
+
 .active {
     color: rgba(0, 0, 255, 1);
 }

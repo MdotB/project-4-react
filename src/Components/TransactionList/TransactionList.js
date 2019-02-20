@@ -20,27 +20,30 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
             )
         }).reverse()
     ) : (
-        <p className="center">Feed me transactions!</p>
+        <tr>
+            <td>No</td>
+            <td>Transactions</td>
+            <td>Yet</td>
+        </tr>
     )
     console.log(transactionList)
     return (
       <div className='TransactionList-container'>
         <h2 className="TransactionList-h2">Transactions</h2>
-        <div id="table-overflow-y">
+        {/* <div id="table-overflow-y"> */}
         <table id="transactions">
-        <thead>
-        <tr className="color-white bold center">
-            <th>Date</th>
-            <th>Category</th>
-            <th>Amount</th>
-        </tr>
-        </thead>
-        <tbody>
-            {transactionList}
-        </tbody>
-        
+            <thead>
+                <tr className="color-white bold center">
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th className="left">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {transactionList}
+            </tbody>
         </table>
-        </div>
+        {/* </div> */}
       </div>
     )
 }

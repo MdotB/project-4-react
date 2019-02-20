@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     text-decoration: none;
     color: #333;
 }
@@ -12,5 +12,29 @@
     color: #333;
     font-size: 22px;
     margin: 15px 0;
-    justify-self: flex-start;
+}
+.transaction-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+.transaction-data p {
+    padding-bottom: 10px;
+}
+.delete {
+    background-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0);
+    transition: all .3s;
+    font-size: 20px;
+    padding: 10px;
+    align-self: flex-end;
+}
+.delete:hover {
+    color: red;
+    cursor: pointer;
+}
+.delete:focus {
+    outline: none;
 }

@@ -12,6 +12,7 @@
     color: #333;
     margin-bottom: 15px;
     font-size: 22px;
+    
 }
 .AddTransaction-form-wrapper {
     display: flex;
@@ -22,7 +23,7 @@
 }
 form {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
 }
 button.AddTransaction-btn {
