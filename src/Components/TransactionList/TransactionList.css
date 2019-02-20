@@ -5,6 +5,7 @@
     align-items: center;
     text-decoration: none;
     color: #333;
+    position: relative;
 }
 .TransactionList-h2 {
     font-family: 'Montserrat', sans-serif;
@@ -12,13 +13,50 @@
     font-size: 22px;
     margin: 15px 0;
 }
-.TransactionList-list {
-    background-color: rgba(255, 255, 255, .0);
+
+#table-overflow-y {
+    position: absolute;
+    top: 52px;
+    height: 90%;
     width: 100%;
-    max-height: 500px;
-    overflow-y: scroll;
+    overflow: auto;
 }
-.Transaction-container {
+#transactions {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 0;
+    color: #333;
+}
+/* #transactions thead {
+    display: block;
+} */
+#transactions th {
+    background-color: #333;
+}
+#transactions td, #transactions th {
+    border: .1px solid #333;
+    padding: 8px;
+  }
+tr:nth-child(even) {
+    background-color: #ddd;
+  }
+#transactions tr:hover {background-color: #eee;}
+
+.color-charc {
+    color: #333;
+}
+.color-white {
+    color: #fff;
+}
+.bold {
+    font-weight: bold;
+}
+.pos-fixed {
+    position: fixed;
+    
+}
+/* .Transaction-container {
     background-color: rgba(255, 255, 255, .0);
     display: flex;
     flex-direction: row;
@@ -26,18 +64,22 @@
     justify-content: space-between;
     padding: 0 20px;
     min-height: 70px;
-}
+} */
+
 .transaction-data {
     padding: 20px;
+    display: flex;
+    width: 100%;
 }
-.transaction-amount {
-    font-weight: bold;
+.align-right {
+    text-align: right;
 }
 .center {
     text-align: center;
 }
 .category {
-    padding: 5px 0;
+    text-align: left;
+    padding: 0;
     text-decoration: none;
 }
 .delete {
@@ -55,7 +97,9 @@
 .delete:focus {
     outline: none;
 }
-
+.active {
+    color: rgba(0, 0, 255, 1);
+}
 @media (max-width: 490px) {
     .Transaction-container {
         font-size: 16px;

@@ -1,30 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './TransactionList.css';
 
 
 const TransactionList = ({ transactions, deleteTransaction }) => {
 
     const transactionList = transactions.length ? (
-        transactions.reverse().map(transaction => {
+        transactions.map(transaction => {
             let style = {
                 color: transaction.category === 'Income' ? 'green' : '#333'
             };
         
             return (
-              <div className='Transaction-container list-group-item' key={transaction._id}>
-                <Link to={"/" + transaction._id}>
-                    <div className="transaction-data">
-                        <p>{transaction.date}</p>
-                        <p className="category">{transaction.category}</p>
-                        <p className='transaction-amount' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-                    </div>
-                </Link>
-                    <button className="delete" onClick={() => deleteTransaction(transaction._id)}><i className="fas fa-trash-alt"></i></button>
-              </div>
-              
+              <tr className='Transaction-container' key={transaction._id}>
+                    <td><NavLink to={"/" + transaction._id} className="color-charc">{transaction.date}</NavLink></td>
+                    <td className="category"><NavLink to={"/" + transaction._id} className="color-charc">{transaction.category}</NavLink></td>
+                    <td className='align-right' style={style}><NavLink to={"/" + transaction._id} className="color-charc">${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</NavLink></td>
+              </tr>
             )
-        })
+        }).reverse()
     ) : (
         <p className="center">Feed me transactions!</p>
     )
@@ -32,8 +26,20 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
     return (
       <div className='TransactionList-container'>
         <h2 className="TransactionList-h2">Transactions</h2>
-        <div className="TransactionList-list list-group">
+        <div id="table-overflow-y">
+        <table id="transactions">
+        <thead>
+        <tr className="color-white bold center">
+            <th>Date</th>
+            <th>Category</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
             {transactionList}
+        </tbody>
+        
+        </table>
         </div>
       </div>
     )

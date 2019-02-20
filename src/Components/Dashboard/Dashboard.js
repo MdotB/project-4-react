@@ -73,14 +73,15 @@ class Dashboard extends Component {
             transactions={this.state.transactions}
             deleteTransaction={this.deleteTransaction}
           />
-          <Route path="/:transaction_id" component={Transaction} />
-          {/* <Route path="/:transaction_id"
+          {/* <Route path="/:transaction_id" component={Transaction} /> */}
+          <Route path="/:transaction_id"
             render={(routerProps) => <Transaction
               className="TransDetail-container"
               transactions={this.state.transactions}
               deleteTransaction={this.deleteTransaction}
+              {...routerProps}
             />}
-          /> */}
+          />
         </div>
       
     )
