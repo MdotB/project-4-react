@@ -31,9 +31,10 @@
 @media (max-width: 768px) {
     .Dashboard-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 15vh 45vh auto;
+        grid-template-rows: 15vh auto 45vh auto;
         grid-template-areas:
             'Balance'
+            'Transaction'
             'TransactionList'
             'AddTrans';
     }

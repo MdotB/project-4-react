@@ -30,7 +30,6 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
     return (
       <div className='TransactionList-container'>
         <h2 className="TransactionList-h2">Transactions</h2>
-        {/* <div id="table-overflow-y"> */}
         <table id="transactions">
             <thead>
                 <tr className="color-white bold center">
@@ -43,7 +42,6 @@ const TransactionList = ({ transactions, deleteTransaction }) => {
                 {transactionList}
             </tbody>
         </table>
-        {/* </div> */}
       </div>
     )
 }
