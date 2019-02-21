@@ -27,8 +27,8 @@ class Dashboard extends Component {
   }
 
   getTransactions = () => {
-    fetch("http://localhost:4001/")
-    // fetch("https://warm-wave-52595.herokuapp.com/")
+    // fetch("http://localhost:4001/")
+    fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
@@ -45,8 +45,8 @@ class Dashboard extends Component {
 
   // Delete transaction by id and then get transactions
   deleteTransaction = (id) => {
-    // Axios.delete(`https://warm-wave-52595.herokuapp.com/delete/${id}`)
-    Axios.delete(`http://localhost:4001/delete/${id}`)
+    Axios.delete(`https://warm-wave-52595.herokuapp.com/delete/${id}`)
+    // Axios.delete(`http://localhost:4001/delete/${id}`)
     .then(res => {
       console.log(res);
       this.getTransactions()

@@ -11,7 +11,8 @@ import "./Transaction.css"
   }
   componentDidMount(){
     let transaction = this.props.match.params.transaction_id;
-     Axios.get(`http://localhost:4001/${transaction}`)
+    //  Axios.get(`http://localhost:4001/${transaction}`)
+     Axios.get(`https://warm-wave-52595.herokuapp.com/${transaction}`)
     .then(res => {
      this.setState({
        _id: res.data._id,
@@ -27,7 +28,8 @@ import "./Transaction.css"
    componentDidUpdate(prevProps, prevState, snapshot){
      let transaction = this.props.match.params.transaction_id;
      if (transaction !== prevState._id) {
-      Axios.get(`http://localhost:4001/${transaction}`)
+      // Axios.get(`http://localhost:4001/${transaction}`)
+      Axios.get(`https://warm-wave-52595.herokuapp.com/${transaction}`)
      .then(res => {
       this.setState({
         _id: res.data._id,
