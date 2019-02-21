@@ -9,7 +9,6 @@ import "./Transaction.css"
     category: '',
     date: ''
   }
-
   componentDidMount(){
     let transaction = this.props.match.params.transaction_id;
      Axios.get(`http://localhost:4001/${transaction}`)
@@ -39,6 +38,7 @@ import "./Transaction.css"
       console.log(res)
      })
      }
+     console.log(this.props.transactions[this.props.transactions.length -1])
    }
    
   render() {

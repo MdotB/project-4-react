@@ -46,7 +46,6 @@ export default class AddTransaction extends Component {
     return (
       <div className='AddTransaction-container'>
         <h2 className='AddTransaction-h2'>Add Transaction</h2>
-        <div className='AddTransaction-form-wrapper'>
         <form method='POST' onSubmit={this.handleSubmit}>
           <input id='amount' type="number" placeholder='$' className="input-field" onChange={this.handleChangeAmount} value={this.state.amount} required/>
           <select id='category' selected="select..." onChange={this.handleChangeCat} className="input-field" value={this.state.category} required>
@@ -68,7 +67,6 @@ export default class AddTransaction extends Component {
           <input id="date" type="date" className="input-field" onChange={this.handleChangeDate} required/>
           <button type="submit" className="AddTransaction-btn">Add</button>
         </form>
-        </div>
       </div>
     )
   }

@@ -9,12 +9,11 @@
     padding: 5px;
     grid-gap: 5px;
     grid-template-columns: repeat(4, minmax(250px, 1fr));
-    grid-template-rows: 15vh 45vh auto auto;
+    grid-template-rows: 15vh 45vh auto;
     grid-template-areas:
-        'Balance Balance Balance Balance'
+        'Balance AddTrans AddTrans AddTrans'
         'TransactionList TransactionList TransactionList Transaction'
-        'TransactionList TransactionList TransactionList Transaction'
-        'AddTrans AddTrans AddTrans AddTrans';
+        'TransactionList TransactionList TransactionList Transaction';
 }
 .AddTransaction-container {
     grid-area: AddTrans;
