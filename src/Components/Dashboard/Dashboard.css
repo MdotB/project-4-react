@@ -1,7 +1,6 @@
 
 .Dashboard-container {
-    background-color: #333;
-    background-image: url("../../Images/bg-image.jpg");
+    background-color: #ddd;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -9,11 +8,12 @@
     padding: 5px;
     grid-gap: 5px;
     grid-template-columns: repeat(4, minmax(250px, 1fr));
-    grid-template-rows: 15vh 45vh auto;
+    grid-template-rows: 15vh auto 30vh auto;
     grid-template-areas:
         'Balance AddTrans AddTrans AddTrans'
-        'TransactionList TransactionList TransactionList Transaction'
-        'TransactionList TransactionList TransactionList Transaction';
+        '. . . .'
+        'TransactionList TransactionList Transaction Transaction'
+        'TransactionList TransactionList Transaction Transaction';
 }
 .AddTransaction-container {
     grid-area: AddTrans;

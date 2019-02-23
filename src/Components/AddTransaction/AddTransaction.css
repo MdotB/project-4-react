@@ -1,6 +1,6 @@
 .AddTransaction-container {
     padding: 20px;
-    background-color: rgba(255, 255, 255, .6);
+    background-color: #fff;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -22,11 +22,10 @@ form {
     
 }
 button.AddTransaction-btn {
-    border: 1px solid #777;
-    background-color: #777;
-    color: #fff;
+    border: 1px solid #333;
+    background-color: rgba(255, 255, 255, .0);
+    color: #333;
     padding: 15px;
-    border-radius: 2px;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -35,21 +34,27 @@ button.AddTransaction-btn {
 .AddTransaction-btn:hover {
     border-bottom: 1px solid #333;
     background-color: #333;
+    color: white;
 }
 .input-field, #category {
     background-color: rgba(255, 255, 255, .0);
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin-right: 5px;
     border: none;
     border-bottom: 2px solid #333;
+}
+#category {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
 }
 
 input:focus {
     outline: none;
 }
-input:valid, select:valid {
-    border: 2px solid rgb(0, 200, 0);
+input:valid, #category:valid {
+    border-bottom: 2px solid rgb(0, 200, 0);
 }
 @media (max-width: 490px) {
     form {

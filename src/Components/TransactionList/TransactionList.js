@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './TransactionList.css';
 
 
-const TransactionList = ({ transactions, deleteTransaction }) => {
+const TransactionList = ({ transactions }) => {
 
     const transactionList = transactions.length ? (
         transactions.map(transaction => {
