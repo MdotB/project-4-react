@@ -6,6 +6,7 @@ import Balance from '../Balance/Balance';
 import Transaction from '../Transaction/Transaction';
 import Axios from "axios";
 import { Route } from 'react-router-dom';
+import Chart from '../Chart/Chart'
 
 class Dashboard extends Component {
   state = {
@@ -27,8 +28,8 @@ class Dashboard extends Component {
   }
 
   getTransactions = () => {
-    // fetch("http://localhost:4001/")
-    fetch("https://warm-wave-52595.herokuapp.com/")
+    fetch("http://localhost:4001/")
+    // fetch("https://warm-wave-52595.herokuapp.com/")
     .then(res => res.json())
     .then(transactions => this.setState({
       transactions: transactions,
@@ -59,14 +60,19 @@ class Dashboard extends Component {
   render() {
     return (
         <div className='Dashboard-container'>
+          <h1>Dashboard</h1>
+          <AddTransaction 
+            className='AddTransaction-container' 
+            getTransactions={this.getTransactions}
+          />
+          <Chart 
+            className='Chart-container'
+            transactions={this.state.transactions}
+          />
           <Balance
             className='Balance-container'
             total={this.state.total}
             transactions={this.state.transactions}
-          />
-          <AddTransaction 
-            className='AddTransaction-container' 
-            getTransactions={this.getTransactions}
           />
           <TransactionList
             className='TransactionList-container'

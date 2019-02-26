@@ -6,7 +6,7 @@ export default class Header extends Component {
   render() {
     return (
       <header className='Header-container'>
-        <h2 className='Header-h2'><Link to="/" className="color-white">CA$H BOARD</Link></h2>
+        <Link to="/" id="Header-h2" className="color-white">CA$H BOARD</Link>
       </header>
     )
   }

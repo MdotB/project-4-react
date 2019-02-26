@@ -10,13 +10,12 @@ const TransactionList = ({ transactions }) => {
             let style = {
                 color: transaction.category === 'Income' ? 'green' : '#333'
             };
-        
             return (
-              <tr className='Transaction-container' key={transaction._id}>
-                    <td><NavLink to={"/" + transaction._id} className="color-charc">{transaction.date}</NavLink></td>
-                    <td className="category"><NavLink to={"/" + transaction._id} className="color-charc">{transaction.category}</NavLink></td>
-                    <td className='align-right' style={style}><NavLink to={"/" + transaction._id} className="color-charc">${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</NavLink></td>
-              </tr>
+              <NavLink to={"/" + transaction._id} className="Transaction-container color-charc" key={transaction._id}>
+                <span>{transaction.date}</span>
+                <span className="category color-charc">{transaction.category}</span>
+                <span className='amount align-right color-charc' style={style}>${transaction.amount.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+              </NavLink>
             )
         }).reverse()
     ) : (
@@ -30,18 +29,16 @@ const TransactionList = ({ transactions }) => {
     return (
       <div className='TransactionList-container'>
         <h2 className="TransactionList-h2">Transactions</h2>
-        <table id="transactions">
-            <thead>
-                <tr className="color-white bold center">
-                    <th>Date</th>
-                    <th>Category</th>
-                    <th className="left">Amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                {transactionList}
-            </tbody>
-        </table>
+        <div className="grid-table-header color-white bold">
+            <span>Date</span>
+            <span>Category</span>
+            <span className='amount'>Amount</span>
+        </div>
+        <div id="transactions">
+          {transactionList}
+        </div>
+            
+        
       </div>
     )
 }

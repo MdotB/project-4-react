@@ -13,37 +13,35 @@
     font-size: 22px;
     margin: 15px 0;
 }
-
 #transactions {
-    table-layout: fixed;
-    border-collapse: collapse;
-    width: 100%;
-    height: calc(100% - 52px);
-    padding: 0;
+    display: grid;
+    border-top: 1px solid black;
     color: #333;
-}
-
-#transactions tbody {
-    display: block;
     width: 100%;
+    max-height: 310px;
     overflow: auto;
-    height: 100%;
 }
-#transactions thead tr {
-    display: block;
-}
-#transactions thead th {
+.grid-table-header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: left;
+    align-items: center;
     background-color: #333;
+    padding: 5px 41px 5px 30px;
+    width: 100%;
 }
-#transactions tbody tr td, #transactions thead tr th {
-    border: .1px solid #333;
-    padding: 8px;
-    width: 500px;
-  }
-tr:nth-child(even) {
-    background-color: #ddd;
-  }
-#transactions tr:hover {background-color: #eee;}
+.Transaction-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 5px 30px;
+}
+/* a:nth-child(even) {
+    background-color: #fff;
+  } */
+/* a:nth-child(odd) {
+    background-color: #eee;
+}   */
 
 .color-charc {
     color: #333;
@@ -55,11 +53,6 @@ tr:nth-child(even) {
     font-weight: bold;
 }
 
-.transaction-data {
-    padding: 20px;
-    display: flex;
-    width: 100%;
-}
 .align-left {
     text-align: left;
 }
@@ -69,14 +62,16 @@ tr:nth-child(even) {
 .center {
     text-align: center;
 }
+.amount {
+    justify-self: right;
+}
 .category {
-    text-align: left;
+    justify-self: left;
     padding: 0;
     text-decoration: none;
 }
-
 .active {
-    color: rgba(0, 0, 255, 1);
+    background-color: #ccc;
 }
 @media (max-width: 490px) {
     .Transaction-container {

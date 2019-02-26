@@ -2,14 +2,14 @@
 .App {
   background-color: rgb(205, 205, 205);
   display: grid;
-  grid-template-columns: 150px 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: 150px minmax(500px, 1fr);
+  grid-template-rows: 1fr;
   grid-template-areas: 
     'header dashboard'
     ;
   font-family: 'Montserrat', sans-serif;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 .Header-container {
   grid-area: header;
@@ -26,9 +26,6 @@
     'header'
     'dashboard';
   }
-}
-@media (max-width: 490px) {
-  
 }
 
 

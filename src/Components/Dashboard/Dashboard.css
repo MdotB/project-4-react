@@ -1,22 +1,29 @@
 
 .Dashboard-container {
-    background-color: #ddd;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     display: grid;
     padding: 5px;
-    grid-gap: 5px;
-    grid-template-columns: repeat(4, minmax(250px, 1fr));
-    grid-template-rows: 15vh auto 30vh auto;
+    margin: 20px 20px 10px 20px;
+    grid-gap: 7px;
+    grid-template-columns: repeat(4, minmax(250px, auto));
+    grid-template-rows: 10vh 25vh auto auto;
     grid-template-areas:
-        'Balance AddTrans AddTrans AddTrans'
-        '. . . .'
-        'TransactionList TransactionList Transaction Transaction'
-        'TransactionList TransactionList Transaction Transaction';
+        'title . . .'
+        'AddTrans AddTrans Chart Balance'
+        'TransactionList TransactionList TransactionList Transaction'
+        'TransactionList TransactionList TransactionList Transaction';
+}
+h1 {
+    font-size: 45px;
+    grid-area: title;
 }
 .AddTransaction-container {
     grid-area: AddTrans;
+}
+.Chart-container {
+    grid-area: Chart;
 }
 .TransactionList-container {
     grid-area: TransactionList;
@@ -30,8 +37,9 @@
 @media (max-width: 768px) {
     .Dashboard-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 15vh auto 45vh auto;
+        grid-template-rows: 15vh auto auto 45vh auto;
         grid-template-areas:
+            'title'
             'Balance'
             'Transaction'
             'TransactionList'

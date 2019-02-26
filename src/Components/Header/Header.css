@@ -12,8 +12,7 @@
     align-items: center;
     list-style: none;
 }
-.Header-h2 {
-    color: white;
+#Header-h2 {
     font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
