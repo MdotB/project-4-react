@@ -60,6 +60,10 @@ const Chart = ({ transactions }) => {
           maintainAspectRatio: false,
           legend: {
             position: "right"
+          },
+          title: {
+            display: true,
+            
           }
         }}
       />

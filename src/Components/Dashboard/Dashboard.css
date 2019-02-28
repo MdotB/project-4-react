@@ -15,6 +15,7 @@
         'TransactionList TransactionList TransactionList Transaction'
         'TransactionList TransactionList TransactionList Transaction'
         ;
+    width: auto;
 }
 
 .AddTransaction-container {
@@ -35,7 +36,7 @@
 @media (max-width: 768px) {
     .Dashboard-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 15vh auto auto 45vh auto;
+        grid-template-rows: 15vh 40vh auto 40vh 40vh;
         grid-template-areas:
             'Balance'
             'Chart'
