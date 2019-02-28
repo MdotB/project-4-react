@@ -10,6 +10,7 @@ import Chart from '../Chart/Chart'
 
 class Dashboard extends Component {
   state = {
+    loaded: false,
     transactions: [],
     total: 0
   }
@@ -46,8 +47,8 @@ class Dashboard extends Component {
 
   // Delete transaction by id and then get transactions
   deleteTransaction = (id) => {
-    Axios.delete(`https://warm-wave-52595.herokuapp.com/delete/${id}`)
-    // Axios.delete(`http://localhost:4001/delete/${id}`)
+    // Axios.delete(`https://warm-wave-52595.herokuapp.com/delete/${id}`)
+    Axios.delete(`http://localhost:4001/delete/${id}`)
     .then(res => {
       console.log(res);
       this.getTransactions()
@@ -60,7 +61,6 @@ class Dashboard extends Component {
   render() {
     return (
         <div className='Dashboard-container'>
-          <h1>Dashboard</h1>
           <AddTransaction 
             className='AddTransaction-container' 
             getTransactions={this.getTransactions}
@@ -79,7 +79,6 @@ class Dashboard extends Component {
             transactions={this.state.transactions}
             deleteTransaction={this.deleteTransaction}
           />
-          {/* <Route path="/:transaction_id" component={Transaction} /> */}
           <Route path="/:transaction_id"
             render={(routerProps) => <Transaction
               className="TransDetail-container"

@@ -10,15 +10,13 @@
     grid-template-columns: repeat(4, minmax(250px, auto));
     grid-template-rows: 10vh 25vh auto auto;
     grid-template-areas:
-        'title . . .'
-        'AddTrans AddTrans Chart Balance'
+        'AddTrans Chart Chart Balance'
+        'AddTrans Chart Chart Balance'
         'TransactionList TransactionList TransactionList Transaction'
-        'TransactionList TransactionList TransactionList Transaction';
+        'TransactionList TransactionList TransactionList Transaction'
+        ;
 }
-h1 {
-    font-size: 45px;
-    grid-area: title;
-}
+
 .AddTransaction-container {
     grid-area: AddTrans;
 }

@@ -19,16 +19,14 @@ const TransactionList = ({ transactions }) => {
             )
         }).reverse()
     ) : (
-        <tr>
-            <td>No</td>
-            <td>Transactions</td>
-            <td>Yet</td>
-        </tr>
+        <div>
+            <h2>No Activity Yet</h2>
+        </div>
     )
     console.log(transactionList)
     return (
       <div className='TransactionList-container'>
-        <h2 className="TransactionList-h2">Transactions</h2>
+        <h2 className="TransactionList-h2">Activity</h2>
         <div className="grid-table-header color-white bold">
             <span>Date</span>
             <span>Category</span>
