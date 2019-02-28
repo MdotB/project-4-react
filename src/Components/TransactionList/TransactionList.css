@@ -26,9 +26,10 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: left;
     align-items: center;
-    background-color: #333;
+    background-color: #fff;
     padding: 5px 41px 5px 30px;
     width: 100%;
+    border-top: 1px solid black;
 }
 .Transaction-container {
     width: 100%;

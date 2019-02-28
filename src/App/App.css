@@ -1,8 +1,8 @@
 
 .App {
-  background-color: rgb(205, 205, 205);
+  background-color: #D9D9DC;
   display: grid;
-  grid-template-columns: 150px minmax(500px, 1fr);
+  grid-template-columns: 130px minmax(500px, 1fr);
   grid-template-rows: 1fr;
   grid-template-areas: 
     'header dashboard'

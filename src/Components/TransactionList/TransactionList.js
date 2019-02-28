@@ -27,7 +27,7 @@ const TransactionList = ({ transactions }) => {
     return (
       <div className='TransactionList-container'>
         <h2 className="TransactionList-h2">Activity</h2>
-        <div className="grid-table-header color-white bold">
+        <div className="grid-table-header color-charc bold">
             <span>Date</span>
             <span>Category</span>
             <span className='amount'>Amount</span>
