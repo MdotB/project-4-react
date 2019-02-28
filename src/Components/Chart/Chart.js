@@ -41,7 +41,10 @@ const Chart = ({ transactions }) => {
             'rgba(255, 99, 132, .6)',
             'rgba(54, 162, 235, .6)',
             'rgba(255, 206, 86, .6)',
-            'rgba(75, 192, 86, .6)'
+            'rgba(75, 192, 86, .6)',
+            'rgba(153, 102, 255, .6)',
+            'rgba(255, 99, 132, .6)',
+            'rgba(54, 162, 235, .6)'
           ]
         }
       ]
@@ -54,7 +57,10 @@ const Chart = ({ transactions }) => {
         width={100}
         height={50}
         options={{
-          maintainAspectRatio: false
+          maintainAspectRatio: false,
+          legend: {
+            position: "right"
+          }
         }}
       />
       </div>

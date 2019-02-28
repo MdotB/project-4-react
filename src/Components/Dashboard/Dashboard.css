@@ -37,10 +37,10 @@
         grid-template-columns: 1fr;
         grid-template-rows: 15vh auto auto 45vh auto;
         grid-template-areas:
-            'title'
             'Balance'
-            'Transaction'
+            'Chart'
             'TransactionList'
+            'Transaction'
             'AddTrans';
     }
 }
