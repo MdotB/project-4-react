@@ -1,0 +1,34 @@
+.SideNav-container {
+    background-color: #3153ED;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 25px;
+    width: 100%;
+}
+.fa-chart-pie {
+    color: #fff;
+    text-align: center;
+}
+.SideNav-container > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 28px;
+}
+#dashboard-link.active {
+    background-color: white;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.flex-row-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

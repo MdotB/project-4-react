@@ -10,7 +10,6 @@ import Chart from '../Chart/Chart'
 
 class Dashboard extends Component {
   state = {
-    loaded: false,
     transactions: [],
     total: 0
   }

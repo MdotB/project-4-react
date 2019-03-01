@@ -1,9 +1,9 @@
 .Header-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #3153ED;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff;
 }
 .Header-ul {
     display: flex;
@@ -11,18 +11,19 @@
     align-items: center;
     list-style: none;
 }
-#Header-h2 {
+#Header-title {
     font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
     padding: 10px;
+    color: #333;
+    background-color: rgba(54, 162, 235, .6);
 }
 header > .active {
     color: #333;
-    background-color: #fff;
+    background-color: #ddd;
     font-weight: bold;
-    width: 100%;
-    text-align: center;
+    height: 100%;
 }
 @media (max-width: 490px) {
     .Header-container {

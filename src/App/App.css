@@ -2,17 +2,21 @@
 .App {
   background-color: #D9D9DC;
   display: grid;
-  grid-template-columns: 130px minmax(500px, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: 106.81px 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-areas: 
-    'header dashboard'
+    'header header' 
+    'side dashboard'
     ;
   font-family: 'Montserrat', sans-serif;
-  min-height: 100vh;
-  width: auto;
+  width: 100%;
+  height: 100vh;
 }
 .Header-container {
   grid-area: header;
+}
+.SideNav-container {
+  grid-area: side;
 }
 .Dashboard-container {
   grid-area: dashboard;

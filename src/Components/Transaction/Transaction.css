@@ -16,7 +16,7 @@
 .transaction-data {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     font-size: 22px;
 }

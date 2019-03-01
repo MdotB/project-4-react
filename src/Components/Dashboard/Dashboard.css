@@ -4,18 +4,17 @@
     background-position: center center;
     background-repeat: no-repeat;
     display: grid;
-    padding: 5px;
-    margin: 20px 20px 10px 20px;
+    padding: 20px 20px 5px 20px;
     grid-gap: 7px;
-    grid-template-columns: repeat(4, minmax(250px, auto));
-    grid-template-rows: 10vh 25vh auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 10vh 25vh 1fr 1fr;
     grid-template-areas:
         'AddTrans Chart Chart Balance'
         'AddTrans Chart Chart Balance'
         'TransactionList TransactionList TransactionList Transaction'
         'TransactionList TransactionList TransactionList Transaction'
         ;
-    width: auto;
+    width: 100%;
 }
 
 .AddTransaction-container {

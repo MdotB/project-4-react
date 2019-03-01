@@ -5,6 +5,7 @@ import Header from '../Components/Header/Header';
 import Dashboard from '../Components/Dashboard/Dashboard';
 import { Provider } from 'react-redux';
 import store from '../store';
+import SideNav from '../Components/SideNav/SideNav';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <Provider store={store}>
       <div className='App'>
         <Header className='Header-container'/>
+        <SideNav />
         <Route path="/"
           render={() => <Dashboard className='Dashboard-container'/>}
         />

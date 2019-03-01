@@ -6,7 +6,7 @@ export default class Header extends Component {
   render() {
     return (
       <header className='Header-container'>
-        <NavLink to="/" id="Header-h2" className="color-white">Dashboard</NavLink>
+        <Link to="/" id="Header-title" className="color-white">Cashboard</Link>
       </header>
     )
   }
