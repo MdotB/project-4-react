@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: flex-start;
     background-color: #fff;
+    border-bottom: 1px solid #ccc;
 }
 .Header-ul {
     display: flex;
@@ -12,12 +13,12 @@
     list-style: none;
 }
 #Header-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     white-space: nowrap;
     padding: 10px;
-    color: #333;
-    background-color: rgba(54, 162, 235, .6);
+    color: #3153ED;
+    background-color: #fff;
 }
 header > .active {
     color: #333;

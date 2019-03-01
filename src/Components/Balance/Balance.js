@@ -4,7 +4,7 @@ import './Balance.css';
 const Balance = ({total}) => {
   console.log(total)
     let style = {
-        color: total > 0 ? 'green' : 'red'
+        color: total > 0 ? 'rgb(0, 200, 0)' : 'red'
     };
 
     return (

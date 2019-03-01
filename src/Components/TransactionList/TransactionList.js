@@ -8,7 +8,7 @@ const TransactionList = ({ transactions }) => {
     const transactionList = transactions.length ? (
         transactions.map(transaction => {
             let style = {
-                color: transaction.category === 'Income' ? 'green' : '#333'
+                color: transaction.category === 'Income' ? 'rgb(0, 200, 0)' : '#333'
             };
             return (
               <NavLink to={"/" + transaction._id} className="Transaction-container color-charc" key={transaction._id}>

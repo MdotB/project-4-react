@@ -6,6 +6,7 @@
     align-items: center;
     padding-top: 25px;
     width: 100%;
+    border-right: 1px solid #ccc;
 }
 .fa-chart-pie {
     color: #fff;

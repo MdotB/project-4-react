@@ -1,8 +1,8 @@
 
 .App {
-  background-color: #D9D9DC;
+  background-color: #ddd;
   display: grid;
-  grid-template-columns: 106.81px 1fr;
+  grid-template-columns: 50px 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas: 
     'header header' 
