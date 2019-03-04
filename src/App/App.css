@@ -2,14 +2,14 @@
 .App {
   background-color: #ddd;
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
   grid-template-areas: 
     'header header' 
-    'side dashboard'
+    'side main'
     ;
   font-family: 'Montserrat', sans-serif;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 .Header-container {
@@ -18,17 +18,19 @@
 .SideNav-container {
   grid-area: side;
 }
-.Dashboard-container {
-  grid-area: dashboard;
+.main-container {
+  grid-area: main;
 }
 
 @media (max-width: 768px) {
   .App {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas: 
     'header'
-    'dashboard';
+    'main'
+    'side';
+    height: auto;
   }
 }
 

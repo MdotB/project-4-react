@@ -9,6 +9,7 @@ import "./Transaction.css"
     category: '',
     date: ''
   }
+
   componentDidMount(){
     let transaction = this.props.match.params.transaction_id;
     //  Axios.get(`http://localhost:4001/${transaction}`)
@@ -43,18 +44,20 @@ import "./Transaction.css"
      console.log(this.props.transactions[this.props.transactions.length -1])
    }
    
+  
   render() {
+    console.log(this.props.history)
     const deleteTransaction = this.props.deleteTransaction
     // const transaction = this.state.transaction ? () : (return false)
     return (
       <div className="TransDetail-container">
-        <h2 className="TransDetail-h2">Transaction Detail</h2>
+        <h1 className="TransDetail-title">Transaction Detail</h1>
         <div className="transaction-data">
           <p>{this.state.date}</p>
           <p>{this.state.category}</p>
           <p className="transaction-amount">${this.state.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
         </div>
-        <button className="delete" onClick={() => deleteTransaction(this.state._id)}><i className="fas fa-trash-alt"></i></button>
+        <button className="delete" onClick={() => deleteTransaction(this.state._id, this.props.history)}><i className="fas fa-trash-alt"></i></button>
       </div>
     )
   }

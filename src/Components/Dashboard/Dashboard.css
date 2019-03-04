@@ -11,10 +11,12 @@
     grid-template-areas:
         'AddTrans Chart Chart Balance'
         'AddTrans Chart Chart Balance'
-        'TransactionList TransactionList TransactionList Transaction'
-        'TransactionList TransactionList TransactionList Transaction'
+        'TransactionList TransactionList TransactionList TransactionList'
+        'TransactionList TransactionList TransactionList TransactionList'
         ;
     width: 100%;
+    height: calc(100vh - 41px);
+    overflow: auto;
 }
 
 .AddTransaction-container {
@@ -26,22 +28,19 @@
 .TransactionList-container {
     grid-area: TransactionList;
 }
-.TransDetail-container {
-    grid-area: Transaction;
-}
 .Balance-container {
     grid-area: Balance;
 }
 @media (max-width: 768px) {
     .Dashboard-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 15vh 40vh auto 40vh 40vh;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas:
             'Balance'
             'Chart'
             'TransactionList'
-            'Transaction'
             'AddTrans';
+        height: calc(100vh - 41px - 78px);
     }
 }
 @media (max-width: 490px) {

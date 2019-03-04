@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 25px;
+    padding: 25px;
     width: 100%;
     border-right: 1px solid #ccc;
 }

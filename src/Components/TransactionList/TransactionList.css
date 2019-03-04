@@ -18,7 +18,7 @@
     border-top: 1px solid black;
     color: #333;
     width: 100%;
-    max-height: 275px;
+    max-height: 294px;
     overflow: auto;
 }
 .grid-table-header {
@@ -37,12 +37,9 @@
     grid-template-columns: repeat(3, 1fr);
     padding: 5px 30px;
 }
-/* a:nth-child(even) {
-    background-color: #fff;
-  } */
-/* a:nth-child(odd) {
+.Transaction-container:hover {
     background-color: #eee;
-}   */
+}
 
 .color-charc {
     color: #333;
@@ -77,5 +74,8 @@
 @media (max-width: 490px) {
     .Transaction-container {
         font-size: 16px;
+    }
+    #transactions {
+        max-height: 100px;
     }
 }

@@ -1,16 +1,19 @@
 .TransDetail-container {
-    background-color: #fff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #fff;
     text-decoration: none;
     color: #333;
+    padding: 20px;
+    height: calc(100vh - 41px);
 }
-.TransDetail-h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    font-size: 22px;
+.TransDetail-title {
+    justify-self: flex-start;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    font-size: 45px;
     margin: 15px 0;
 }
 .transaction-data {
@@ -19,6 +22,7 @@
     align-items: flex-start;
     justify-content: center;
     font-size: 22px;
+    font-family: 'Roboto', sans-serif;
 }
 .transaction-data p {
     padding-bottom: 10px;
@@ -29,7 +33,6 @@
     transition: all .3s;
     font-size: 20px;
     padding: 10px;
-    align-self: flex-end;
 }
 .delete:hover {
     color: red;
@@ -37,4 +40,13 @@
 }
 .delete:focus {
     outline: none;
+}
+
+@media (max-width: 768px) {
+    .TransDetail-container {
+        height: calc(100vh - 41px - 78px)
+    }
+    .TransDetail-title {
+        font-size: 32px;
+    }
 }
