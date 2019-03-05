@@ -52,11 +52,11 @@ import "./Transaction.css"
     return (
       <div className="TransDetail-container">
         <h1 className="TransDetail-title">Transaction Detail</h1>
-        <div className="transaction-data">
-          <p>{this.state.date}</p>
-          <p>{this.state.category}</p>
-          <p className="transaction-amount">${this.state.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
-        </div>
+        <form className="transaction-data">
+          <input value={this.state.date}/>
+          <input value={this.state.category}/>
+          <input value={this.state.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} className="transaction-amount"/>
+        </form>
         <button className="delete" onClick={() => deleteTransaction(this.state._id, this.props.history)}><i className="fas fa-trash-alt"></i></button>
       </div>
     )
